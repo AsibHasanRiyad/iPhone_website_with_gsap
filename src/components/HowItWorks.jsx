@@ -24,6 +24,20 @@ const HowItWorks = () => {
       y: 0,
       ease: "power2.inOut",
     });
+    animateWithGsap(
+      "#hiw_video_container",
+      {
+        scale: 1,
+        duration: 3,
+      },
+      {
+        scrub: true,
+        start: "top 95%",
+        toggleActions: "restart reverse restart reverse",
+
+        end: "bottom 60%",
+      }
+    );
   }, []);
 
   return (
@@ -41,7 +55,7 @@ const HowItWorks = () => {
             It's here . The biggest redesign in the history of Apple GPUs
           </p>
         </div>
-        <div className="mt-10 md:mt-20 mb-14">
+        <div id="hiw_video_container" className="mt-10 scale-0 md:mt-20 mb-14">
           <div className="relative h-full flex-center">
             <div className="overflow-hidden ">
               <img
@@ -51,15 +65,22 @@ const HowItWorks = () => {
               />
             </div>
             <div className=" hiw-video">
-              <video>
+              <video
+                className="pointer-events-none "
+                autoPlay
+                muted
+                loop
+                playsInline={true}
+                key={frameVideo}
+              >
                 <source src={frameVideo} type="video/mp4" />
               </video>
             </div>
           </div>
-          <p className="mt-3 font-semibold text-center text-gray ">
+          <p className="font-semibold text-center mt-14 text-gray">
             Honaki: Star Rail
           </p>
-          <div className=" hiw-text-container">
+          <div className="mt-10  hiw-text-container">
             <div className="flex flex-col justify-center flex-1">
               <p className=" hiw-text g_fadeIn">
                 A17 Pro is a new class of iPhone Chip , that perform good in all
