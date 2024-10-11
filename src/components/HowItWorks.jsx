@@ -41,7 +41,7 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <section className="common-padding">
+    <section className="overflow-hidden common-padding">
       <div className="screen-max-width">
         <div id="chip" className="w-full my-20 flex-center">
           <img src={chipImg} alt="Chip" width={180} height={180} />
@@ -55,8 +55,11 @@ const HowItWorks = () => {
             It's here . The biggest redesign in the history of Apple GPUs
           </p>
         </div>
-        <div id="hiw_video_container" className="mt-10 scale-0 md:mt-20 mb-14">
-          <div className="relative h-full flex-center">
+        <div className="mt-10 md:mt-20 mb-14">
+          <div
+            id="hiw_video_container"
+            className="relative h-full scale-0 flex-center"
+          >
             <div className="overflow-hidden ">
               <img
                 src={frameImg}
@@ -80,7 +83,7 @@ const HowItWorks = () => {
           <p className="font-semibold text-center mt-14 text-gray">
             Honaki: Star Rail
           </p>
-          <div className="mt-10  hiw-text-container">
+          <div className="mt-10 hiw-text-container">
             <div className="flex flex-col justify-center flex-1">
               <p className=" hiw-text g_fadeIn">
                 A17 Pro is a new class of iPhone Chip , that perform good in all
